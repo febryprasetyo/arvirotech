@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".marketing.perencana.PerencanaMarketing">
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout"
+        app:tabIndicator="@color/tab_selected"
+        app:tabTextColor="#99FFFFFF"
+        app:tabSelectedTextColor="@color/white"
+        android:background="@color/design_default_color_primary"
+        app:tabIndicatorHeight="2dp"
+        app:tabGravity="fill">
+
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@+id/tabLayout"
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageButton
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/fabAdd"
+        android:background="@drawable/bg_fab"
+        android:src="@drawable/ic_add"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="56dp"
+        android:layout_height="56dp"/>
+</RelativeLayout>

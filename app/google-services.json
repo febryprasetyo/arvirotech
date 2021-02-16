@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1003697912776",
+    "firebase_url": "https://arvirotech-monev-default-rtdb.firebaseio.com",
+    "project_id": "arvirotech-monev",
+    "storage_bucket": "arvirotech-monev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003697912776:android:eea8d662ecad1222909efd",
+        "android_client_info": {
+          "package_name": "com.arvirotech.monev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003697912776-bmbn5lic8dshgtpn9lfj1e7mvphm0nqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeYD80MFHoPG9CxGBi-e-LXiKZwbuhTIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003697912776-bmbn5lic8dshgtpn9lfj1e7mvphm0nqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

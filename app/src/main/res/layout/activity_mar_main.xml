@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".marketing.MarMain"
+    android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <!--    Header-->
+    <RelativeLayout
+        android:id="@+id/headerbanner"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/header"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_marginStart="@dimen/header_margin"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/roboto_black"
+                android:text=" "
+                android:textColor="@color/white"
+                android:textSize="24dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtName"
+                android:fontFamily="@font/roboto_light"
+                android:text="Let's be productive today"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_avatar" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerbanner">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/layoutPerencana"
+                android:layout_marginTop="@dimen/appbar_padding"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/row_perencana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PERENCANAAN"/>
+
+                    <TextView
+                        android:id="@+id/PrcTotalPagu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="0"
+                        android:textColor="@color/purple_700"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/PrcPaguMarNol"
+                        android:layout_marginStart="130dp"
+                        android:layout_width="200dp"
+                        android:textAlignment="textStart"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/PrcKerjaMarNol"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 50%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/PrcPaguMarLima"
+                        android:layout_marginStart="130dp"
+                        android:layout_width="200dp"
+                        android:textAlignment="textStart"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/PrcKerjaMarLima"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/PrcPaguMarSeratus"
+                        android:textAlignment="textStart"                        android:layout_height="wrap_content"
+                        android:layout_marginStart="130dp"
+                        android:layout_width="200dp"
+                        android:text=""
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/PrcKerjaMarSeratus"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text=""
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Kontrak"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/PrcPaguMarKontrak"
+                        android:layout_marginStart="130dp"
+                        android:layout_width="200dp"
+                        android:textAlignment="textStart"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/PrcKerjaMarKontrak"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text=" "
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutKonstruksi"
+                android:layout_marginTop="@dimen/appbar_padding"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/row_konstruksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="KONSTRUKSI"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/KonTotalPagu"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/KonPaguMarNol"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/KonKerjaMarNol"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 50%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/KonPaguMarLima"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/KonKerjaMarLima"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/KonPaguMarSeratus"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/KonKerjaMarSeratus"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Kontrak"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/KonPaguMarKontrak"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/KonKerjaMarKontrak"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutPengadaan"
+                android:layout_marginTop="@dimen/appbar_padding"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/row_pengadaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PENGADAAN"/>
+                    <TextView
+                        android:id="@+id/AdaTotalPagu"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/AdaPaguMarNol"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/AdaKerjaMarNol"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 50%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/AdaPaguMarLima"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/AdaKerjaMarLima"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/AdaPaguMarSeratus"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/AdaKerjaMarSeratus"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Kontrak"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/AdaPaguMarKontrak"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/AdaKerjaMarKontrak"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="@dimen/appbar_padding"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/row_omzet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL OMZET"/>
+                    <TextView
+                        android:id="@+id/OmzTotalPagu"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/purple_700"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/OmzPaguMarNol"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/OmzKerjaMarNol"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 50%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/OmzPaguMarLima"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/OmzKerjaMarLima"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Progress 100%"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/OmzPaguMarSeratus"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/OmzKerjaMarSeratus"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="10"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:text="Kontrak"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/OmzPaguMarKontrak"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/purple_700" />
+                    <TextView
+                        android:id="@+id/OmzKerjaMarKontrak"
+                        android:textAlignment="textEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/black"
+                        android:text="0"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
