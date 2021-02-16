@@ -1,27 +1,19 @@
 package com.arvirotech.monev.marketing.konstruksi;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arvirotech.monev.R;
 import com.arvirotech.monev.marketing.adapter.KonMarTabAdapter;
-import com.arvirotech.monev.marketing.adapter.MarTabAllAdapter;
-import com.arvirotech.monev.model.Konstruksi;
 import com.arvirotech.monev.model.listData;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

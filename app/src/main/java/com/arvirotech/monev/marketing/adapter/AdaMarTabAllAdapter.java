@@ -8,19 +8,23 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arvirotech.monev.R;
-import com.arvirotech.monev.marketing.compon.DetailMar;
+import com.arvirotech.monev.marketing.pengadaan.DetailPengMar;
 import com.arvirotech.monev.model.listData;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 
-public class MarTabAllAdapter extends RecyclerView.Adapter<MarTabAllAdapter.MyViewHolder>{
+public class AdaMarTabAllAdapter extends RecyclerView.Adapter<AdaMarTabAllAdapter.myviewholder> {
 
     private Context context;
     private List<listData> dataList;
@@ -28,26 +32,31 @@ public class MarTabAllAdapter extends RecyclerView.Adapter<MarTabAllAdapter.MyVi
     private String mAlamat;
     private double _totalPagu;
 
-    public MarTabAllAdapter(Context context) {
-        this.context = context;
+    public AdaMarTabAllAdapter() {
     }
 
-    public MarTabAllAdapter(List<listData> dataList) {
+    public AdaMarTabAllAdapter(Context context, List<listData> dataList) {
+        this.context = context;
         this.dataList = dataList;
     }
 
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AdaMarTabAllAdapter(List<listData> allListData) {
 
+    }
+
+    @NonNull
+    @Override
+    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
-        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,parent,false);
-        MyViewHolder vHolder = new MyViewHolder(v);
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        AdaMarTabAllAdapter.myviewholder vHolder = new AdaMarTabAllAdapter.myviewholder(v);
 
         return vHolder;
     }
 
     @Override
-    public void onBindViewHolder( MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull myviewholder holder, int position) {
+
 
         DecimalFormat formatRupiah = (DecimalFormat) DecimalFormat.getCurrencyInstance();
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
@@ -62,19 +71,31 @@ public class MarTabAllAdapter extends RecyclerView.Adapter<MarTabAllAdapter.MyVi
         holder.Pekerjaan.setText(dl.getNamaProyek());
         holder.Lpse.setText(dl.getSatuanKerja());
         holder.Pagu.setText(formatRupiah.format(_totalPagu));
-        holder.Presentase.setText(dl.getProgress());
 
+        holder.Presentase.setText(dl.getProgress());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
                 DatabaseReference myref = mDatabase.getReference("Marketing").child("Perencana");
+                DatabaseReference key = myref.child("key");
+                key.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()){
+                            String keyID = snapshot.getValue().toString();
+                        }
+                    }
 
-                String id = myref.getRef().getKey();
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
                 listData selected = dataList.get(position);
-                Intent detailIntent = new Intent(v.getContext(), DetailMar.class);
+                Intent detailIntent = new Intent(v.getContext(), DetailPengMar.class);
                 detailIntent.putExtra("Pekerjaan", dl.getNamaProyek());
                 detailIntent.putExtra("satuanKerja", dl.getSatuanKerja());
                 detailIntent.putExtra("alamatProyek", dl.getAlamatProyek());
@@ -87,17 +108,14 @@ public class MarTabAllAdapter extends RecyclerView.Adapter<MarTabAllAdapter.MyVi
             }
 
         });
-
-
     }
-
 
     @Override
     public int getItemCount() {
         return dataList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public class myviewholder extends RecyclerView.ViewHolder{
 
         private LinearLayout itemPekerjaan;
         private TextView Pekerjaan;
@@ -105,20 +123,15 @@ public class MarTabAllAdapter extends RecyclerView.Adapter<MarTabAllAdapter.MyVi
         private TextView Pagu;
         private TextView Presentase;
 
-        public MyViewHolder(View itemView) {
+        public myviewholder(@NonNull View itemView) {
             super(itemView);
-
 
             itemPekerjaan = (LinearLayout) itemView.findViewById(R.id.clik_pekerjaan);
             Pekerjaan = (TextView) itemView.findViewById(R.id.tvPekerjaan);
             Lpse = (TextView) itemView.findViewById(R.id.tvLpse);
             Pagu = (TextView) itemView.findViewById(R.id.tvPagu);
-            Presentase = (TextView) itemView.findViewById(R.id.tvPersentase);
-
-
+                Presentase = (TextView) itemView.findViewById(R.id.tvPersentase);
+            String id;
         }
     }
-
-
-
 }

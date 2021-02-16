@@ -1,4 +1,4 @@
-package com.arvirotech.monev.marketing.compon;
+package com.arvirotech.monev.marketing.pengadaan;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -15,7 +15,6 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.arvirotech.monev.R;
-import com.arvirotech.monev.marketing.pengadaaan.PengadaanMarketing;
 import com.arvirotech.monev.model.AddMarketing;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +49,7 @@ public class AddDataPengMar extends AppCompatActivity {
         setContentView(R.layout.activity_add_data_peng_mar);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Tambah Pekerjaan Kon");
+        actionBar.setTitle("Tambah Pekerjaan");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         etNamaProyek = findViewById(R.id.namaProyekMar);

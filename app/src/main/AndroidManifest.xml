@@ -12,14 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ArvirotechMonev">
-        <activity android:name=".marketing.compon.DetailKons"></activity>
+        <activity android:name=".marketing.pengadaan.EditPengMar"></activity>
+        <activity android:name=".marketing.pengadaan.DetailPengMar" />
+        <activity android:name=".marketing.compon.DetailKons" />
         <activity android:name=".marketing.compon.EditKon" />
-        <activity android:name=".marketing.pengadaaan.PengadaanMarketing" />
-        <activity android:name=".marketing.compon.AddDataPengMar" />
+        <activity android:name=".marketing.pengadaan.PengadaanMarketing" />
+        <activity android:name=".marketing.pengadaan.AddDataPengMar" />
         <activity android:name=".marketing.compon.AddDataKonMar" />
         <activity
             android:name=".auth.LoginActivity"
-            android:theme="@style/Theme.ArvirotechMonev.NoActionBar" >
+            android:theme="@style/Theme.ArvirotechMonev.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,9 +40,7 @@
             android:label="Perencana" />
         <activity
             android:name=".marketing.MarMain"
-            android:theme="@style/Theme.ArvirotechMonev.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.ArvirotechMonev.NoActionBar" />
         <activity android:name=".MainActivity" />
     </application>
 

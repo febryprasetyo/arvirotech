@@ -5,21 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.arvirotech.monev.R;
 import com.arvirotech.monev.auth.LoginActivity;
-import com.arvirotech.monev.auth.Register;
 import com.arvirotech.monev.marketing.konstruksi.KonstruksiMarketing;
-import com.arvirotech.monev.marketing.pengadaaan.PengadaanMarketing;
+import com.arvirotech.monev.marketing.pengadaan.PengadaanMarketing;
 import com.arvirotech.monev.marketing.perencana.PerencanaMarketing;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.Tag;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -90,35 +84,13 @@ public class MarMain extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         RetriveUserInfo();
+        OpenActivity();
+        Perencana();
+        Konstruksi();
+        Pengadaan();
+//        TotalOmzet();
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.getInstance().signOut();
-                Intent intent = new Intent(MarMain.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        // TODO: Open Activity
-        lPerencana.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MarMain.this, PerencanaMarketing.class));
-            }
-        });
-        lKonstruksi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MarMain.this, KonstruksiMarketing.class));
-            }
-        });
-        lPengadaan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MarMain.this, PengadaanMarketing.class));
-            }
-        });
 
         // TODO: PERENCANA
         final DatabaseReference nm = FirebaseDatabase.getInstance().getReference("Marketing").child("Perencana");
@@ -530,24 +502,48 @@ public class MarMain extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if (currentUser == null) {
-//            // No user is signed in
-//            Intent i = new Intent(MarMain.this, LoginActivity.class);
-//            startActivity(i);
-//            finish();
-//        } else {
-//            if (currentUser != null) {
-//                Intent i = new Intent(MarMain.this, Register.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        }
-//    }
+    private void OpenActivity() {
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.getInstance().signOut();
+                Intent intent = new Intent(MarMain.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        // TODO: Open Activity
+        lPerencana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MarMain.this, PerencanaMarketing.class));
+            }
+        });
+        lKonstruksi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MarMain.this, KonstruksiMarketing.class));
+            }
+        });
+        lPengadaan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MarMain.this, PengadaanMarketing.class));
+            }
+        });
+    }
+
+    private void Perencana() {
+
+    }
+
+    private void Konstruksi() {
+
+    }
+
+    private void Pengadaan() {
+
+    }
 
     private void RetriveUserInfo(){
         currentUserId = mAuth.getCurrentUser().getUid();

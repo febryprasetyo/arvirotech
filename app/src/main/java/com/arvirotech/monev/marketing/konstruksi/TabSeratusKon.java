@@ -1,6 +1,5 @@
 package com.arvirotech.monev.marketing.konstruksi;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.arvirotech.monev.R;
-import com.arvirotech.monev.marketing.adapter.MarTabAllAdapter;
+import com.arvirotech.monev.marketing.adapter.PrcMarTabAllAdapter;
 import com.arvirotech.monev.model.listData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +35,7 @@ public class TabSeratusKon extends Fragment {
 
     private List<listData> allListData;
     private RecyclerView rvList;
-    private MarTabAllAdapter myAdapter;
+    private PrcMarTabAllAdapter myAdapter;
     private View nulView;
     TextView pagu;
     Double _totalPagu;
@@ -82,7 +81,7 @@ public class TabSeratusKon extends Fragment {
                         listData l=npsnapshot.getValue(listData.class);
                         allListData.add(l);
                     }
-                    myAdapter = new MarTabAllAdapter(allListData);
+                    myAdapter = new PrcMarTabAllAdapter(allListData);
                     rvList.setAdapter(myAdapter);
                 }
 

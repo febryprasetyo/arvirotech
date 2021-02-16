@@ -1,8 +1,6 @@
 package com.arvirotech.monev.marketing.perencana;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arvirotech.monev.R;
-import com.arvirotech.monev.marketing.adapter.MarTabAllAdapter;
+import com.arvirotech.monev.marketing.adapter.PrcMarTabAllAdapter;
 import com.arvirotech.monev.model.listData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,24 +21,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.text.FieldPosition;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class TabNol  extends Fragment {
 
     private List<listData> allListData;
     private RecyclerView rvList;
-    private MarTabAllAdapter myAdapter;
+    private PrcMarTabAllAdapter myAdapter;
     private View nulView;
     TextView pagu;
     Double _totalPagu;
@@ -78,7 +71,7 @@ public class TabNol  extends Fragment {
                         listData l=npsnapshot.getValue(listData.class);
                         allListData.add(l);
                     }
-                    myAdapter = new MarTabAllAdapter(allListData);
+                    myAdapter = new PrcMarTabAllAdapter(allListData);
                     rvList.setAdapter(myAdapter);
                 }
 
